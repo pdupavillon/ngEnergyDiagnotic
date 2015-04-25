@@ -3,7 +3,7 @@ Directive angular pour générer les diagnostiques énergétiques (ges + dpe)
 
 #### injection du module
 ````
-angular.module('moduleName', ['ngEnergy']):
+angular.module('moduleName', ['ngEnergyDiagnotic']):
 ```
 #### Utilisation
 ```
