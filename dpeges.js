@@ -1,4 +1,4 @@
-var app = angular.module('ng-energy', []);
+var app = angular.module('ngEnergy', []);
 
 app.factory('canvasHelper', function(){
   var helper = function(settings, canvas){
@@ -76,7 +76,9 @@ app.factory('canvasHelper', function(){
         drawLine(data);
       });      
     };
-    
+    that.clear = function(){
+      ctx.clearRect ( 0 , 0 , canvas.width, canvas.height );
+    }
     that.drawSelect = function(value, letter){
       var selected;
       var selectedValue;
@@ -130,7 +132,13 @@ app.factory('canvasHelper', function(){
         ];
       var helper = new canvasHelper(settings, canvas);
       helper.draw();
-      helper.drawSelect($scope.ngValue, $scope.ngLetter);
+      $scope.$watchGroup(['ngLetter','ngValue'], function(old, newValue){
+        if ($scope.ngValue||$scope.ngLetter){
+          helper.clear();
+          helper.draw();
+          helper.drawSelect($scope.ngValue, $scope.ngLetter);
+        }
+      });
     }
   };
 }])
@@ -155,7 +163,13 @@ app.factory('canvasHelper', function(){
         ];
       var helper = new canvasHelper(settings, canvas);
       helper.draw();
-      helper.drawSelect($scope.ngValue, $scope.ngLetter);
+      $scope.$watchGroup(['ngLetter','ngValue'], function(old, newValue){
+        if ($scope.ngValue||$scope.ngLetter){
+          helper.clear();
+          helper.draw();
+          helper.drawSelect($scope.ngValue, $scope.ngLetter);
+        }
+      });
     }
   };
 }]);
