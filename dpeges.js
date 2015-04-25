@@ -1,4 +1,4 @@
-var app = angular.module('ngEnergy', []);
+var app = angular.module('ngEnergyDiagnotic', []);
 
 app.factory('canvasHelper', function(){
   var helper = function(settings, canvas){
