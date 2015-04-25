@@ -11,4 +11,4 @@ angular.module('moduleName', ['ngEnergyDiagnotic']):
 <dpe ng-value="20"></dpe>
 ```
 
-Démo : http://embed.plnkr.co/AouZ21xTRNZV2QtiyKYt
+Démo : http://embed.plnkr.co/NwCqFR
